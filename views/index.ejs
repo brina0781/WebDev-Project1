@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/main.css">
+  <title>Random Cat Fact</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Here's a random cat fact</h1>
+
+    <form action="/" id="form" class="form" method="POST">
+      <button type="submit" class="form-submit">Get a New Fact</button>
+    </form>
+
+    <section id="cards" class="cards">
+      <% if (data) { %>
+      <article class="card-item">
+        <h2 class="card-fact"><%= data %></h2>
+      </article>
+      <% } else if (error) { %>
+      <div id="tag-error" class="tag-error"><%= error %></div>
+      <% } %>
+    </section>
+  </div>
+</body>
+
+</html>
